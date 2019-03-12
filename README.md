@@ -28,6 +28,25 @@ Or install it yourself as:
 * msg_sec_check
 * send_template_message(未测试)
 
+在config/initializers下面创建 wx_opendata.rb
+复制配置进去，填写你的appid, appsecret
+```
+require 'wx_opendata'
+appid = ''
+appsecret = ''
+token_file = '/tmp/weapp_access_token'
+$wx_token = WxOpendata::Token.new(appid, appsecret, token_file)
+$wx_service = WxOpendata::Service.new
+```
+在你的API下面,如果要获取activity_id, 只要通过$wx_service调用create_activity_id即可
+```
+def get_wx_activity_id
+    render json: {
+        activity_id: $wx_service.create_activity_id($wx_token.token)
+    }
+end
+```
+其他api用法请参考 **spec/wx_opendata_spec.rb** 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
