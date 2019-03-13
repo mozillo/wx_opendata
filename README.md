@@ -30,7 +30,7 @@ Or install it yourself as:
 
 在config/initializers下面创建 wx_opendata.rb
 复制配置进去，填写你的appid, appsecret
-```
+```ruby
 require 'wx_opendata'
 appid = ''
 appsecret = ''
@@ -39,7 +39,7 @@ $wx_token = WxOpendata::Token.new(appid, appsecret, token_file)
 $wx_service = WxOpendata::Service.new
 ```
 在你的API下面,如果要获取activity_id, 只要通过$wx_service调用create_activity_id即可
-```
+```ruby
 def get_wx_activity_id
     render json: {
         activity_id: $wx_service.create_activity_id($wx_token.token)
