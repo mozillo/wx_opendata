@@ -41,9 +41,9 @@ $wx_service = WxOpendata::Service.new
 在你的API下面,如果要获取activity_id, 只要通过$wx_service调用create_activity_id即可
 ```ruby
 def get_wx_activity_id
-    render json: {
-        activity_id: $wx_service.create_activity_id($wx_token.token)
-    }
+  render json: {
+    activity_id: $wx_service.create_activity_id($wx_token.token)
+  }
 end
 ```
 其他api用法请参考 **spec/wx_opendata_spec.rb** 
