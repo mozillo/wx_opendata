@@ -18,7 +18,7 @@ Or install it yourself as:
     $ gem install wx_opendata
 
 ## Usage
-
+###接口
 详情请参考 **spec/wx_opendata_spec.rb** 用例
 目前支持
 * create_activity_id
@@ -27,6 +27,11 @@ Or install it yourself as:
 * create_wx_aqrcode
 * msg_sec_check
 * send_template_message(未测试)
+###签名
+
+###客服消息
+
+###消息推送
 
 在config/initializers下面创建 wx_opendata.rb
 复制配置进去，填写你的appid, appsecret

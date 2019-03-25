@@ -12,3 +12,4 @@ module WxOpendata
   class<< self
   end
 end
+

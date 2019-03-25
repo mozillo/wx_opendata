@@ -16,7 +16,7 @@ module WxOpendata
       form_id = params[:form_id]
       page = params[:page] || 'pages/index/main'
       data = params[:data] || { keyword1: { value: 'Test Message Template' } }
-      emphasis_keyword = params[:emphasis_keyword] || "keyword1.DATA"
+      emphasis_keyword = params[:emphasis_keyword] || ""
       p = { touser: touser, template_id: template_id, form_id: form_id, page: page, data: data, emphasis_keyword: emphasis_keyword }
       jsondata = post(url, p)
       begin
